@@ -52,6 +52,10 @@ class ChromecastDeviceController : NSObject {
         self.deviceScanner.startScan()
     }
     
+    func updateMiniControlState(viewController : UIViewController){
+        self.currentViewController = viewController
+    }
+    
     func connectToDevice(device : GCKDevice) {
         self.deviceManager = GCKDeviceManager(device: device, clientPackageName: "")
         self.deviceManager.delegate = self
@@ -59,6 +63,74 @@ class ChromecastDeviceController : NSObject {
     }
     
     func chromecastButtonDidClick() {
-        println("chromecast did click")
+        if let currentViewController = self.currentViewController {
+            let viewController = UINavigationController(rootViewController: ChromecastDevicesListViewController(chromecastDeviceController: self))
+            currentViewController.presentViewController(viewController, animated: true, completion: { () -> Void in
+                
+            })
+        }
+    }
+}
+
+
+// MARK: - GCKDeviceManagerDelegate
+extension ChromecastDeviceController : GCKDeviceManagerDelegate{
+    
+    func deviceManagerDidConnect(deviceManager: GCKDeviceManager!) {
+        self.lastDeviceID = deviceManager.device.deviceID
+        println("deviceManagerDidConnect")
+    }
+    
+    func deviceManager(deviceManager: GCKDeviceManager!, didConnectToCastApplication applicationMetadata: GCKApplicationMetadata!, sessionID: String!, launchedApplication: Bool) {
+        self.isReconnecting = false
+        
+        println("didConnectToCastApplication")
+    }
+    
+    func deviceManager(deviceManager: GCKDeviceManager!, didReceiveApplicationMetadata metadata: GCKApplicationMetadata!) {
+        
+        println("didReceiveApplicationMetadata")
+        
+    }
+    
+    func deviceManagerDidResumeConnection(deviceManager: GCKDeviceManager!, rejoinedApplication: Bool) {
+        
+    }
+    
+}
+
+// MARK: - GCKDeviceScannerListener
+extension ChromecastDeviceController : GCKDeviceScannerListener{
+    
+    func deviceDidComeOnline(device: GCKDevice!) {
+        if let lastDeviceID = self.lastDeviceID where lastDeviceID == device.deviceID {
+            self.isReconnecting = true
+            self.connectToDevice(device)
+        }
+        println("device \(device.friendlyName) did come online")
+    }
+    
+    func deviceDidChange(device: GCKDevice!) {
+        println("device \(device.friendlyName) did change")
+    }
+    
+    func deviceDidGoOffline(device: GCKDevice!) {
+        println("device \(device.friendlyName) did go offline")
+    }
+}
+
+
+// MARK: - GCKMediaControlChannelDelegate
+extension ChromecastDeviceController : GCKMediaControlChannelDelegate{
+    func mediaControlChannel(mediaControlChannel: GCKMediaControlChannel!, didCompleteLoadWithSessionID sessionID: Int) {
+        
+    }
+    
+    func mediaControlChannelDidUpdateMetadata(mediaControlChannel: GCKMediaControlChannel!) {
+        
+    }
+    
+    func mediaControlChannelDidUpdateStatus(mediaControlChannel: GCKMediaControlChannel!) {
+        
     }
 }

@@ -12,6 +12,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var connectButton: UIButton!
     lazy var deviceController = (UIApplication.sharedApplication().delegate as! AppDelegate).chromecastDeviceController!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.deviceController.updateMiniControlState(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Home"

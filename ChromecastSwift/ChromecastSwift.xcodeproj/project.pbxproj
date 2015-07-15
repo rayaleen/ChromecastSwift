@@ -16,11 +16,8 @@
 		71F3DF521B54BA9000CE475A /* ChromecastDeviceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F3DF511B54BA9000CE475A /* ChromecastDeviceController.swift */; };
 		71F3DF551B54BBCC00CE475A /* GoogleCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F3DF541B54BBCC00CE475A /* GoogleCast.framework */; };
 		71F3DF5B1B54C4A200CE475A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F3DF5A1B54C4A200CE475A /* SystemConfiguration.framework */; };
-		71F3DF5E1B54DD0A00CE475A /* ChromecastDeviceScanerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F3DF5D1B54DD0A00CE475A /* ChromecastDeviceScanerExtension.swift */; };
-		71F3DF601B54F79600CE475A /* ChromecastDeviceManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F3DF5F1B54F79600CE475A /* ChromecastDeviceManagerExtension.swift */; };
 		71F3DF621B54FF4B00CE475A /* MediaAccessibility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F3DF611B54FF4B00CE475A /* MediaAccessibility.framework */; };
 		71F3DF641B54FF5300CE475A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F3DF631B54FF5300CE475A /* CoreText.framework */; };
-		71F3DF661B550BD800CE475A /* ChromecastMediaControlChannelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F3DF651B550BD800CE475A /* ChromecastMediaControlChannelExtension.swift */; };
 		71F3DF681B550FC300CE475A /* ChromecastDevicesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F3DF671B550FC300CE475A /* ChromecastDevicesListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,11 +46,8 @@
 		71F3DF541B54BBCC00CE475A /* GoogleCast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleCast.framework; sourceTree = "<group>"; };
 		71F3DF561B54BDA500CE475A /* ChromecastSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChromecastSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		71F3DF5A1B54C4A200CE475A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		71F3DF5D1B54DD0A00CE475A /* ChromecastDeviceScanerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromecastDeviceScanerExtension.swift; sourceTree = "<group>"; };
-		71F3DF5F1B54F79600CE475A /* ChromecastDeviceManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromecastDeviceManagerExtension.swift; sourceTree = "<group>"; };
 		71F3DF611B54FF4B00CE475A /* MediaAccessibility.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaAccessibility.framework; path = System/Library/Frameworks/MediaAccessibility.framework; sourceTree = SDKROOT; };
 		71F3DF631B54FF5300CE475A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		71F3DF651B550BD800CE475A /* ChromecastMediaControlChannelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromecastMediaControlChannelExtension.swift; sourceTree = "<group>"; };
 		71F3DF671B550FC300CE475A /* ChromecastDevicesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromecastDevicesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,10 +99,7 @@
 			children = (
 				71F3DF311B54B93000CE475A /* AppDelegate.swift */,
 				71F3DF511B54BA9000CE475A /* ChromecastDeviceController.swift */,
-				71F3DF5F1B54F79600CE475A /* ChromecastDeviceManagerExtension.swift */,
-				71F3DF5D1B54DD0A00CE475A /* ChromecastDeviceScanerExtension.swift */,
 				71F3DF671B550FC300CE475A /* ChromecastDevicesListViewController.swift */,
-				71F3DF651B550BD800CE475A /* ChromecastMediaControlChannelExtension.swift */,
 				71F3DF561B54BDA500CE475A /* ChromecastSwift-Bridging-Header.h */,
 				71F3DF381B54B93000CE475A /* Images.xcassets */,
 				71F3DF3A1B54B93000CE475A /* LaunchScreen.xib */,
@@ -253,13 +244,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71F3DF601B54F79600CE475A /* ChromecastDeviceManagerExtension.swift in Sources */,
 				71F3DF341B54B93000CE475A /* ViewController.swift in Sources */,
 				71F3DF321B54B93000CE475A /* AppDelegate.swift in Sources */,
 				71F3DF521B54BA9000CE475A /* ChromecastDeviceController.swift in Sources */,
-				71F3DF5E1B54DD0A00CE475A /* ChromecastDeviceScanerExtension.swift in Sources */,
 				71F3DF681B550FC300CE475A /* ChromecastDevicesListViewController.swift in Sources */,
-				71F3DF661B550BD800CE475A /* ChromecastMediaControlChannelExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
